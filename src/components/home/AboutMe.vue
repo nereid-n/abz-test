@@ -87,9 +87,11 @@
       }
     }
     &__img {
+      min-width: 289px;
       margin-top: 3px;
       margin-left: 35px;
       @media (max-width: $lg) {
+        min-width: 220px;
         width: 220px;
         margin-top: 4px;
         margin-left: 0;
