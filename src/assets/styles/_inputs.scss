@@ -1,0 +1,28 @@
+.input {
+  $paddingX: 16px;
+  width: 100%;
+  padding: 17px $paddingX;
+  font: inherit;
+  border: 1px solid #b7b7b7;
+  border-radius: 4px;
+  &-wrap {
+    position: relative;
+  }
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: $paddingX;
+    color: $lightGray;
+    transform: translateY(-50%);
+  }
+  &--acitve {
+    .input {
+      &__placeholder {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.select {
+}
