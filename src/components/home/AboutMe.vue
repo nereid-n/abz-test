@@ -4,7 +4,7 @@
       <div class="aboutMe">
         <h2 class="h2">Let's get ac quainted</h2>
         <div class="aboutMe__content">
-          <img class="aboutMe__img" :src="`${publicPath}img/man-mobile.svg`" alt="">
+          <img class="aboutMe__img" :src="`${publicPath}img/man-mobile.svg`" width="289" alt="">
           <div class="aboutMe__text">
             <h3 class="h3">I am cool frontend developer</h3>
             <p v-for="item in text" class="paragraph2">{{item}}</p>
