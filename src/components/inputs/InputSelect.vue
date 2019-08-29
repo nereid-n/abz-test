@@ -2,12 +2,12 @@
   <div class="select-wrap" :class="wrapClass">
     <div class="select" :class="{'select--active': open}">
       <div class="select__input" @click="openSelect">
-        <template v-if="value === ''">
-          {{data.label}}
+        <template v-if="value">
+          {{value.name}}
         </template>
         <span class="selected" v-else>
-        {{value.name}}
-      </span>
+          {{data.label}}
+        </span>
         <i class="select__caret icon-caret-down"></i>
       </div>
       <div v-if="open" class="select__menu">
@@ -56,7 +56,7 @@
       input(data) {
         this.touched = true;
         this.value = data;
-        this.$emit('input', this.value.value);
+        this.$emit('input', data.value);
       }
     },
     mounted() {

@@ -2,10 +2,10 @@
   <div class="input-wrap" :class="wrapClass">
     <div class="upload-wrap">
       <div class="upload__input input">
-        <span v-if="value === ''" class="c-light-gray">{{data.label}}</span>
-        <template v-else>
+        <template v-if="value">
           {{value[0].name}}
         </template>
+        <span v-else class="c-light-gray">{{data.label}}</span>
       </div>
       <button class="btn btn--secondary upload__btn">
         <span>Upload</span>

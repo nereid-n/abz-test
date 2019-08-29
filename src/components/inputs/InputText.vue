@@ -9,7 +9,7 @@
            v-model="value"
     >
     <div class="input__hint">
-      <template v-if="error && touched">Error</template>
+      <template v-if="error && touched">{{error}}</template>
     </div>
   </div>
 </template>

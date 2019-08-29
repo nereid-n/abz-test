@@ -6,6 +6,18 @@ export default {
       touched: false
     }
   },
+  props: {
+    data: {
+      type: Object,
+      required: true
+    },
+    error: {
+      type: String
+    },
+    defaultValue: {
+      required: true
+    }
+  },
   methods: {
     onBlur() {
       this.focus = false;
@@ -16,6 +28,14 @@ export default {
       this.$emit('input', this.value);
     }
   },
+  watch: {
+    defaultValue() {
+      if (this.defaultValue === undefined) {
+        this.value = '';
+        this.touched = false;
+      }
+    }
+  },
   computed: {
     wrapClass() {
       return {
@@ -23,15 +43,6 @@ export default {
         'input--filled': this.value !== '',
         'input--error': this.error && this.touched
       };
-    }
-  },
-  props: {
-    data: {
-      type: Object,
-      required: true
-    },
-    error: {
-      type: Boolean
     }
   }
 }

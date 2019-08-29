@@ -13,7 +13,8 @@
                          :data="input.data"
                          :key="input.data.name"
                          :name="input.data.name"
-                         :error="errors.has(input.data.name)"
+                         :error="errors.first(input.data.name)"
+                         :defaultValue="value[input.data.name]"
                          v-model="value[input.data.name]"
                          v-validate="input.rules"
                          @input="onInput"
@@ -140,7 +141,6 @@
                 break;
               }
             }
-
           })
       },
       send() {
@@ -162,10 +162,11 @@
                   this.modalTitle = 'Congratulations';
                   this.modalMessage = 'You have successfully passed <br> the registration';
                   this.$store.commit('users/NEW_USER', true);
+                  this.value = {};
                 }
                 else {
                   this.modalTitle = 'Oops';
-                  this.modalMessage = '';
+                  this.modalMessage = res.body.message;
                 }
               });
           })
@@ -173,12 +174,7 @@
       onInput() {
         this.$validator.validateAll()
           .then(answer => {
-            if (answer) {
-              this.valide = true;
-            }
-            else {
-              this.valide = false;
-            }
+            this.valide = answer;
           });
       }
     },

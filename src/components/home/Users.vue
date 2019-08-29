@@ -72,7 +72,7 @@
         else {
           this.countUsers = 6;
         }
-      }
+      },
     },
     created() {
       this.getBodyWidth();
