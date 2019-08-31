@@ -291,6 +291,7 @@
       @media (max-width: $md) {
         margin-right: auto;
         margin-bottom: 12px;
+        padding-right: 10px;
       }
       &-item {
         margin-left: 22px;

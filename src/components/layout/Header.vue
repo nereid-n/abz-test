@@ -4,7 +4,7 @@
     <div class="container">
       <div class="header">
         <router-link :to="{name: 'home'}" class="header__logo">
-          <img width="134" :src="`${publicPath}img/logo.svg`" alt="">
+          <img width="134" :src="`${publicPath}img/logo.svg`" onError="this.src='/img/no-img.jpg'" alt="">
         </router-link>
         <nav class="header__menu menu">
           <a v-for="link in menu"
@@ -36,7 +36,7 @@
       <div class="header-mobile">
         <div class="header-mobile__profile">
           <div class="header-mobile__avatar avatar">
-            <img :src="user.photo" alt="">
+            <img :src="user.photo" onError="this.src='/img/no-img.jpg'" alt="">
           </div>
           <div class="header-mobile__profile-text">
             <span class="header-mobile__profile-name">{{user.name}}</span>
@@ -123,6 +123,7 @@
     }
     &-mobile {
       $paddingX: 25px;
+      $paddingXmd: 15px;
       $width: 260px;
       &-wrap {
         position: fixed;
@@ -137,6 +138,9 @@
         @media (max-width: $lg) {
           display: block;
         }
+        @media (max-width: $md) {
+          width: 250px;
+        }
       }
       &--active {
         left: 0;
@@ -144,6 +148,9 @@
       &__profile {
         padding: 30px $paddingX 23px;
         border-bottom: 1px solid #e1e1e1;
+        @media (max-width: $md) {
+          padding-left: $paddingXmd;
+        }
         &-text {
           display: flex;
           flex-direction: column;
@@ -164,6 +171,9 @@
       &__menu {
         flex-direction: column;
         padding: 30px $paddingX;
+        @media (max-width: $md) {
+          padding-left: $paddingXmd;
+        }
         .menu__item {
           margin: 0 0 23px;
         }
@@ -171,20 +181,29 @@
     }
     &__logo {
       margin-top: 5px;
+      @media (max-width: $md) {
+        margin-top: 0;
+      }
     }
     &__menu {
       margin: 0 auto;
+      padding-left: 85px;
       @media (max-width: $lg) {
         display: none;
       }
       &-btn {
         display: none;
+        margin-right: -8px;
         margin-left: auto;
-        font-size: 24px;
+        font-size: 23px;
         background-color: transparent;
         border: none;
         @media (max-width: $lg) {
           display: flex;
+        }
+        @media (max-width: $md) {
+          margin-top: -7px;
+          margin-right: -5px;
         }
       }
     }
@@ -200,14 +219,17 @@
       &-text {
         display: flex;
         flex-direction: column;
+        width: 200px;
         padding-top: 2px;
         margin-right: 11px;
         text-align: right;
       }
       &-name {
+        @include ellipsis;
         font-size: 14px;
       }
       &-email {
+        @include ellipsis;
         margin-right: 2px;
         color: $lightGray;
         font-size: 12px;

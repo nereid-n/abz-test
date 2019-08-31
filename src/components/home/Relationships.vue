@@ -51,7 +51,7 @@
       padding: 99px 0 77px;
     }
     @media (max-width: $md) {
-      padding: 45px 0 49px;
+      padding: 45px 0;
     }
     .h2 {
       width: 55%;
@@ -107,6 +107,11 @@
         margin-right: 0;
         @media (max-width: $lg) {
           margin-right: auto;
+        }
+        @media (max-width: $md) {
+          img {
+            margin-bottom: 16px;
+          }
         }
       }
       img {

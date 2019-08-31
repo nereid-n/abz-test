@@ -183,6 +183,7 @@
           margin-bottom: 4px;
         }
         @media (max-width: $md) {
+          width: 90%;
           margin-right: auto;
           margin-left: auto;
         }
@@ -216,7 +217,7 @@
         margin-top: 33px;
       }
       @media (max-width: $md) {
-        margin-top: 7px;
+        margin-top: 5px;
       }
     }
   }

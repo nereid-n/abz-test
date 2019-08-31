@@ -51,6 +51,7 @@
   background-color: #707070;
   opacity: 0;
   pointer-events: none;
+  box-shadow: $shadow;
   transition: $transition;
   &-parent {
     position: relative;

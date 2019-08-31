@@ -68,7 +68,7 @@
         border-bottom-left-radius: 0;
         @media (max-width: $md) {
           max-width: 56px;
-          padding: 0 15px;
+          padding: 0 16px;
         }
       }
       i {

@@ -222,7 +222,7 @@
       }
       @media (max-width: $md) {
         width: 100%;
-        margin-top: 10px;
+        margin: 10px auto 22px;
       }
     }
     &__inputs {
