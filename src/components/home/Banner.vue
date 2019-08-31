@@ -42,9 +42,18 @@
     }
     &-wrap {
       background-color: $secondary;
-      background-image: url('../../assets/img/bg-1.jpg');
+      background-image: url('../../assets/img/bg-1/bg-1.jpg');
       background-size: cover;
       background-repeat: no-repeat;
+      @media (max-width: $xl) {
+        background-image: url('../../assets/img/bg-1/bg-1_1200.jpg');
+      }
+      @media (max-width: $md) {
+        background-image: url('../../assets/img/bg-1/bg-1_768.jpg');
+      }
+      @media (max-width: 320px) {
+        background-image: url('../../assets/img/bg-1/bg-1_320.jpg');
+      }
     }
     .h1 {
       margin-bottom: 0;

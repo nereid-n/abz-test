@@ -59,9 +59,15 @@
     }
     &-wrap {
       background-color: $secondary;
-      background-image: url('../../assets/img/bg-2.jpg');
+      background-image: url('../../assets/img/bg-2/bg-2.jpg');
       background-size: cover;
       background-repeat: no-repeat;
+      @media (max-width: $md) {
+        background-image: url('../../assets/img/bg-2/bg-2_768.jpg');
+      }
+      @media (max-width: 320px) {
+        background-image: url('../../assets/img/bg-2/bg-2_320.jpg');
+      }
     }
     &__content {
       display: flex;
