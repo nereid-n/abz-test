@@ -45,9 +45,10 @@
   import InputSelect from "../inputs/InputSelect";
   import InputFile from "../inputs/InputFile";
   import Modal from "../Modal";
+  import InputMask from "../inputs/InputMask";
   export default {
     name: "SignUp",
-    components: {Modal, InputFile, InputSelect, InputText},
+    components: {InputMask, Modal, InputFile, InputSelect, InputText},
     data() {
       return {
         inputs: [
@@ -79,11 +80,11 @@
             }
           },
           {
-            component: 'InputText',
+            component: 'InputMask',
             className: 'signUp-col-4',
             rules: {
               required: true,
-              regex: '^[\\+]{0,1}380([0-9]{9})$'
+              min: 17
             },
             data: {
               name: 'phone',
@@ -146,6 +147,7 @@
       send() {
         let formData = new FormData();
         this.value.photo = this.value.photo[0];
+        this.value.phone = this.value.phone.replace(/[()\s]/g, "");
         for (let key in this.value) {
           formData.append(key, this.value[key]);
         }
