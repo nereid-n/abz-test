@@ -39,3 +39,26 @@
     pointer-events: all;
   }
 }
+
+.tooltip {
+  position: absolute;
+  z-index: 15;
+  top: 100%;
+  left: 0;
+  padding: 5px 8px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #707070;
+  opacity: 0;
+  pointer-events: none;
+  transition: $transition;
+  &-parent {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      .tooltip {
+        opacity: 1;
+      }
+    }
+  }
+}

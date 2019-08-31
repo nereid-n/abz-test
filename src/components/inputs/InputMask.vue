@@ -3,7 +3,7 @@
     <div class="input__placeholder">{{data.label}}</div>
     <imask-input class="input"
            :placeholder="focus ? data.placeholder : ''"
-                 :mask="focus ? '+{38}(\\000)000 00 00' : ''"
+                 :mask="focus ? data.mask : ''"
            @focus="focus = true"
            @blur="onBlur"
            @input="onInput"

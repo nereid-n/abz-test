@@ -5,16 +5,19 @@
         <h2 class="h2">Our cheerful users</h2>
         <h5 class="h5">Attention! Sorting users by registration date</h5>
         <div v-if="firstLoad" class="users__items">
-          <div v-for="item in users" class="users__item">
+          <div v-for="(item, index) in users" class="users__item">
             <div class="users__avatar avatar">
               <img :src="item.photo" alt="">
             </div>
             <div class="users__item-text">
               <h4 class="h4">{{item.name}}</h4>
               <div class="users__item-info">
-                <span>{{item.position}}</span>
-                <span>{{item.email}}</span>
-                <span>{{item.phone}}</span>
+                <div :class="{'tooltip-parent': tooltips[index * info.length + spanIndex]}"
+                     v-for="(infoItem, spanIndex) in info"
+                >
+                  <span ref="span" class="users__item-span">{{item[infoItem]}}</span>
+                  <div v-if="tooltips[index * info.length + spanIndex]" class="tooltip">{{item[infoItem]}}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -45,7 +48,13 @@
         load: true,
         windowSize: 0,
         countUsers: 0,
-        totalPages: 0
+        totalPages: 0,
+        info: [
+          'position',
+          'email',
+          'phone'
+        ],
+        tooltips: []
       }
     },
     methods: {
@@ -73,6 +82,15 @@
           this.countUsers = 6;
         }
       },
+    },
+    watch: {
+      users() {
+        this.$nextTick(() => {
+          for (let i = this.tooltips.length; i < this.$refs.span.length; i++) {
+            this.tooltips.push(this.$refs.span[i].scrollWidth > this.$refs.span[i].offsetWidth);
+          }
+        });
+      }
     },
     created() {
       this.getBodyWidth();
@@ -183,13 +201,11 @@
         @media (max-width: $lg) {
           line-height: 18px;
         }
-        span {
-          @include ellipsis;
-          color: inherit;
-          &:first-of-type {
-            white-space: normal;
-          }
-        }
+      }
+      &-span {
+        @include ellipsis;
+        display: block;
+        color: inherit;
       }
     }
     &__btn {
