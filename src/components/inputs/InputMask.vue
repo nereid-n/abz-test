@@ -9,8 +9,11 @@
            @input="onInput"
            v-model="value"
     />
-    <div class="input__hint">
-      <template v-if="error && touched">{{error}}</template>
+    <div v-if="error && touched" class="input__error">
+      {{error}}
+    </div>
+    <div v-else class="input__hint">
+      {{data.hint}}
     </div>
   </div>
 </template>

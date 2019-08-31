@@ -16,7 +16,12 @@
              @change="change"
       >
     </div>
-    <div class="input__hint">{{data.hint}}</div>
+    <div v-if="error && touched" class="input__error">
+      {{error}}
+    </div>
+    <div v-else class="input__hint">
+      {{data.hint}}
+    </div>
   </div>
 </template>
 

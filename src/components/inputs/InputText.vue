@@ -8,8 +8,11 @@
            @input="onInput"
            v-model="value"
     >
-    <div class="input__hint">
-      <template v-if="error && touched">{{error}}</template>
+    <div v-if="error && touched" class="input__error">
+      {{error}}
+    </div>
+    <div v-else class="input__hint">
+      {{data.hint}}
     </div>
   </div>
 </template>
@@ -24,6 +27,7 @@
 </script>
 
 <style lang="scss">
+
   .input {
     @include inputBorder;
     width: 100%;
@@ -33,11 +37,17 @@
     &-wrap {
       position: relative;
     }
-    &__hint {
+    &__hint,
+    &__error {
       min-height: 21px;
       padding: 3px $paddingInputX;
-      color: $lightGray;
       font-size: 12px;
+    }
+    &__hint {
+      color: $lightGray;
+    }
+    &__error {
+      color: $error;
     }
     &__placeholder {
       $placeholderPaddingLeft: 3px;
@@ -75,7 +85,6 @@
       .input,
       .select {
         border-color: $error;
-        &__hint,
         &__placeholder {
           color: $error
         }
