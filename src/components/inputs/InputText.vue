@@ -3,6 +3,7 @@
     <div class="input__placeholder">{{data.label}}</div>
     <input class="input"
            :placeholder="focus ? data.placeholder : ''"
+           :type="data.type || 'text'"
            @focus="focus = true"
            @blur="onBlur"
            @input="onInput"

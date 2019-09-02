@@ -2,12 +2,13 @@
   <div class="input-wrap" :class="wrapClass">
     <div class="input__placeholder">{{data.label}}</div>
     <imask-input class="input"
-           :placeholder="focus ? data.placeholder : ''"
+                 :placeholder="focus ? data.placeholder : ''"
                  :mask="focus ? data.mask : ''"
-           @focus="focus = true"
-           @blur="onBlur"
-           @input="onInput"
-           v-model="value"
+                 :type="data.type || 'text'"
+                 @focus="focus = true"
+                 @blur="onBlur"
+                 @input="onInput"
+                 v-model="value"
     />
     <div v-if="error && touched" class="input__error">
       {{error}}

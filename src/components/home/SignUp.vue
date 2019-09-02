@@ -76,7 +76,8 @@
             },
             data: {
               name: 'email',
-              label: 'Email'
+              label: 'Email',
+              type: 'email'
             }
           },
           {
@@ -89,7 +90,8 @@
             data: {
               name: 'phone',
               label: 'Phone',
-              mask: '+{38}(\\000)000 00 00'
+              mask: '+{38}(\\000)000 00 00',
+              type: 'tel'
             }
           },
           {

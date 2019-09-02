@@ -23,7 +23,7 @@ Vue.mixin({
   },
   methods: {
     errorImg(item) {
-      item.photo = `${this.publicPath}/img/no-img.jpg`;
+      item.photo = `${this.publicPath}img/cover-icon-user.svg`;
     }
   }
 });
