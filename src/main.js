@@ -20,6 +20,11 @@ Vue.mixin({
     return {
       publicPath: process.env.BASE_URL
     }
+  },
+  methods: {
+    errorImg(item) {
+      item.photo = `${this.publicPath}/img/no-img.jpg`;
+    }
   }
 });
 

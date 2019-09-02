@@ -7,7 +7,7 @@
         <div v-if="firstLoad" class="users__items">
           <div v-for="(item, index) in users" class="users__item">
             <div class="users__avatar avatar">
-              <img :src="item.photo" onError="this.src=`${publicPath}/img/no-img.jpg`" alt="">
+              <img :src="item.photo" @error="errorImg(item)" alt="">
             </div>
             <div class="users__item-text">
               <h4 class="h4">{{item.name}}</h4>
@@ -81,7 +81,7 @@
         else {
           this.countUsers = 6;
         }
-      },
+      }
     },
     watch: {
       users() {
