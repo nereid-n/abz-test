@@ -10,7 +10,7 @@ module.exports = {
         test: /\.(jpe?g)$/i,
         plugins: [
           imageminMozjpeg({
-            quality: 20,
+            quality: 70,
             progressive: true
           })
         ]

@@ -13,6 +13,7 @@
       </button>
       <input class="upload"
              type="file"
+             :accept="data.accept"
              @change="change"
       >
     </div>

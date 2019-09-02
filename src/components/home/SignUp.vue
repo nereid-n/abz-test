@@ -116,7 +116,8 @@
             data: {
               name: 'photo',
               label: 'Upload your photo',
-              hint: 'File format jpg up to 5 MB, the minimum size of 70x70px'
+              hint: 'File format jpg up to 5 MB, the minimum size of 70x70px',
+              accept: 'image/jpeg'
             }
           }
         ],

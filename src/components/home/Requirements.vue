@@ -64,9 +64,17 @@
       background-repeat: no-repeat;
       @media (max-width: $md) {
         background-image: url('../../assets/img/bg-2/bg-2_768.jpg');
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-resolution:192dpi) {
+          background-image: url('../../assets/img/bg-2/bg-2_768-2.jpg');
+        }
       }
       @media (max-width: 320px) {
         background-image: url('../../assets/img/bg-2/bg-2_320.jpg');
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-resolution:192dpi) {
+          background-image: url('../../assets/img/bg-2/bg-2_320-2.jpg');
+        }
       }
     }
     &__content {

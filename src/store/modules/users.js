@@ -46,7 +46,7 @@ export default {
         .catch(err => console.error(`catch, ${err}`));
     },
     'ADD_USER': async (context, params) => {
-      return await Vue.http.post(`${process.env.VUE_APP_API_URL}users`, params.data, {headers: params.headersz})
+      return await Vue.http.post(`${process.env.VUE_APP_API_URL}users`, params.data, {headers: params.headers})
         .then(
           res => {
             return res;

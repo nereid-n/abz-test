@@ -4,7 +4,7 @@
     <div class="container">
       <div class="header">
         <router-link :to="{name: 'home'}" class="header__logo">
-          <img width="134" :src="`${publicPath}img/logo.svg`" onError="this.src='/img/no-img.jpg'" alt="">
+          <img width="134" :src="`${publicPath}img/logo.svg`" onError="this.src=`${publicPath}/img/no-img.jpg`" alt="">
         </router-link>
         <nav class="header__menu menu">
           <a v-for="link in menu"

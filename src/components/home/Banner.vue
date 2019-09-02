@@ -50,9 +50,17 @@
       }
       @media (max-width: $md) {
         background-image: url('../../assets/img/bg-1/bg-1_768.jpg');
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-resolution:192dpi) {
+          background-image: url('../../assets/img/bg-1/bg-1_768-2.jpg');
+        }
       }
       @media (max-width: 320px) {
         background-image: url('../../assets/img/bg-1/bg-1_320.jpg');
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-resolution:192dpi) {
+          background-image: url('../../assets/img/bg-1/bg-1_320-2.jpg');
+        }
       }
     }
     .h1 {
